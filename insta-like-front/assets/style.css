@@ -3,14 +3,14 @@
 
 :root {
     --font-size-base: 16px;
-    --primary-color: #45474B;
-    --secondary-color: #F5F7F8;
-    --tertiary-color: #379777;
+    --primary-color: #dbdbdb;
+    --secondary-color: #7b00ff;
+    --tertiary-color: #5aafff;
 
     --border-radius-small: 0.25rem;
     --border-radius-medium: 0.625rem;
     --border-radius-circle: 50%;
-    --transition-fast: 0.3s;
+    --transition-fast: 0.2s;
 
     font-size: var(--font-size-base);
 }
@@ -22,7 +22,8 @@
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+    padding: 20px;
+    font-family: 'charm', serif;
     background-color: var(--secondary-color);
     width: 100%;
     height: 100vh;
@@ -70,7 +71,7 @@ body {
 
 /* Botão de Login */
 .login-btn {
-    background-color: black;
+    background-color: var(--primary-color);
     color: var(--secondary-color);
     border: none;
     padding: 0.5rem 1rem;
@@ -98,11 +99,13 @@ body {
 
 /* Profile */
 .profile-container {
-    width: 100%;
+    background-color: purple;
+    border: 5px solid black;
+    width: fit-content;
     max-width: 56.25rem;
-    margin: 3.5rem auto;
+    margin: 80px auto;
+    border-radius: 50px;
     padding: 1.5rem;
-    background-color: var(--secondary-color);
 }
 
 .profile-header {
@@ -115,13 +118,14 @@ body {
 .profile-pic {
     width: 7.5rem;
     height: 7.5rem;
-    border-radius: var(--border-radius-circle);
+    object-fit: cover;
+    border-radius: 50px;
     margin-right: 1.25rem;
-    border: 3px solid var(--primary-color);
+    border: 3px solid black;
 }
 
 .profile-info h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -129,32 +133,40 @@ body {
 
 .profile-info p {
     font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
     color: var(--primary-color);
     font-weight: 500;
 }
 
 /* Grid de Imagens */
 .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.4rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
     margin-top: 1.25rem;
 }
 
 .image-grid img {
-    width: 100%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 0px black;
+    width: 16rem;
     height: 16rem;
     object-fit: cover;
-    transition: transform var(--transition-fast) ease, filter var(--transition-fast) ease;
+    transition: var(--transition-fast);
 }
 
 .image-grid img:hover {
+    box-shadow: 1px 1px 5px black;
     transform: scale(1.01);
     filter: brightness(0.85);
+    transition: var(--transition-fast);
 }
 
 /* Modal */
 .modal {
+    flex-direction: column;
+    flex-wrap: wrap;
     display: none;
     position: fixed;
     z-index: 1000;
@@ -162,49 +174,58 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(1, 3, 4, 0.66);
-    display: flex;
-    justify-content: center;
     align-items: center;
     padding: 1.25rem;
     text-align: center;
+    justify-content: center;
 }
 
 .modal-content {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    position: relative;
     display: block;
     max-width: 70vh;
     max-height: 70vh;
-    border-radius: var(--border-radius-medium);
-    margin: 2rem auto 0.5rem;
+    border-radius: 50px;
+    margin-top: 5px;
 }
 
 #caption {
+    width: 100%;
+    font-family: "Montserrat";
     background-color: var(--secondary-color);
     color: var(--primary-color);
     padding: 1.8rem;
-    border-radius: 0.3125rem;
+    border-radius: 20px;
     max-width: 69vh;
-    margin: 0 auto;
+    margin: 10px 0;
     box-sizing: border-box;
     line-height: 1.5;
     font-weight: 500;
 }
 
 .close {
+    background-color: var(--tertiary-color);
+    padding: 20px;
+    width: 30px;
+    border-radius: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
     position: absolute;
-    top: 2.5rem;
-    right: 36rem;
-    color: var(--secondary-color);
-    font-size: 3rem;
+    left: 50%;
+    top: 0;
+    margin-top: 20px;
+    color: var(--primary-color);
+    font-size: 2rem;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
 }
-
-.close:hover,
-.close:focus {
-    color: var(--secondary-color);
-}
-
 /* Responsividade */
 @media (max-width: 480px) {
 

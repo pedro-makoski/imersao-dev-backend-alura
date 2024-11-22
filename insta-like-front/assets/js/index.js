@@ -36,7 +36,7 @@ function addImageClickEvents() {
     images.forEach(img => {
         img.addEventListener("click", function () {
             captionText.textContent = "";
-            modal.style.display = "block";
+            modal.style.display = "flex";
             modalImg.src = this.src;
 
             const article = this.closest("article");
