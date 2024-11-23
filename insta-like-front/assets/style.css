@@ -4,8 +4,8 @@
 :root {
     --font-size-base: 16px;
     --primary-color: #dbdbdb;
-    --secondary-color: #7b00ff;
-    --tertiary-color: #5aafff;
+    --secondary-color: rgb(164, 107, 0);
+    --tertiary-color: rgb(53, 69, 74);
 
     --border-radius-small: 0.25rem;
     --border-radius-medium: 0.625rem;
@@ -99,7 +99,7 @@ body {
 
 /* Profile */
 .profile-container {
-    background-color: purple;
+    background-color: var(--tertiary-color);
     border: 5px solid black;
     width: fit-content;
     max-width: 56.25rem;
@@ -149,6 +149,7 @@ body {
 
 .image-grid img {
     border-radius: 50px;
+    border: 5px solid black;
     box-shadow: 10px 10px 0px black;
     width: 16rem;
     height: 16rem;
@@ -181,6 +182,7 @@ body {
 }
 
 .modal-content {
+    border: 5px solid black;
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -193,6 +195,7 @@ body {
 }
 
 #caption {
+    border: 5px solid black;
     width: 100%;
     font-family: "Montserrat";
     background-color: var(--secondary-color);
